@@ -1,0 +1,25 @@
+{
+  "form_fields": [
+    {
+      "key": "title",
+      "label": "Title",
+      "type": "text",
+      "order": 1,
+      "validators": ["required"]
+    },
+    {
+      "key": "description",
+      "label": "Description",
+      "type": "text",
+      "order": 2,
+      "validators": ["required"]
+    },
+    {
+      "key": "price",
+      "label": "Price",
+      "type": "number",
+      "order": 3,
+      "validators": ["required" ]
+    }
+  ]
+}

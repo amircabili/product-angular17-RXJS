@@ -1,0 +1,39 @@
+<div class="my-4 row">
+  <div class="col-sm-6 left">
+    <button class="btn btn-primary" (click)="onAddNewProductClicked()"><b>Add New Product</b></button>
+  </div>
+  <div class="col-sm-6 right">
+    <form class="form-inline">
+      <div class="input-group">
+        <span class="input-group-text">
+          <svg width="16" height="16" class="bi bi-search">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+          </svg>
+        </span>
+        <input type="text" class="form-control"
+               [(ngModel)]="searchQuery" (input)="onSearchApply()"  [ngModelOptions]="{ standalone: true }" placeholder="Search here">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="product card flex-md-row mb-4 box-shadow h-md-250"  *ngFor="let product of pagedProducts">
+  <img alt="click to edit" class="m-4 card-img-right flex-auto  d-none d-md-block" alt="click to edit"  [src]="product.thumbnail ? product.thumbnail :'/assets/images/empty.png'" style="width: 160px; height: 100%">
+  <div class="card-body d-flex flex-column align-items-start" alt="click to edit" (click)="editProduct(product)">
+    <h3 class="mb-0">
+      <a class="text-dark text-decoration-none pe-auto" title="Click to edit "  >{{ product.title }}</a>
+    </h3>
+    <div class="mb-1 text-muted mt-3 text-decoration-underline"><b>Products Description</b></div>
+    <p class="card-text mb-auto"   title="Click to edit ">{{ product.description }}</p>
+    <p class="card-text my-2 mb-auto border-top"    title="Click to edit "><b>Price:</b> {{ product.price }}</p>
+  </div>
+  <button class="m-4 px-3 py-2 card-img-right flex-auto d-none d-md-block btn btn-danger" (click)="deleteProduct(product)"><b>Delete</b></button>
+</div>
+
+<div class="my-4 row">
+  <div class="pagination d-flex justify-content-between">
+    <button class="btn btn-outline-primary" [disabled]="currentPage === 1" (click)="prevPage()">Before</button>
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+    <button class="btn btn-outline-primary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+  </div>
+</div>

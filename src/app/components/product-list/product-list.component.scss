@@ -1,0 +1,21 @@
+
+img.logo{
+  max-width: 150px;
+}
+
+
+button{
+  max-height: 50px;
+}
+
+.product{
+  .card-body,img {
+    cursor: pointer;
+  }
+  &:hover{
+    background: lightblue;
+    opacity: 0.7;
+  }
+}
+
+
