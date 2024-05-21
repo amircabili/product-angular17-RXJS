@@ -1,27 +1,86 @@
-# ProductAngular17RXJS
+Products Management Application
+This is an Angular-based application for managing products. It allows users to view a list of products, add new products, update existing products, and delete products. The application uses local storage to persist product data across sessions.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
 
-## Development server
+Features:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+View a list of products with their details
+Add new products
+Update existing products
+Delete products
+Persist product data using local storage
+Load form fields configuration dynamically
 
-## Code scaffolding
+Technologies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular
+TypeScript
+Bootstrap (for styling)
+RxJS (for reactive programming)
+Local Storage (for data persistence)
 
-## Build
+Setup:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the repository:
+Copy code
+git clone https://github.com/your-username/products-management-app.git
+cd products-management-app
 
-## Running unit tests
+Install dependencies:
+Copy code
+npm install
+Run the application:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Copy code
+ng serve
+Open the application:
+Open your web browser and navigate to http://localhost:4200.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Usage:
+
+Viewing Products
+The home page displays a list of products.
+Click on a product to view its details in a form.
+Adding a Product
+Click the "Add Product" button on the product list page.
+Fill in the form with the product details.
+Click the "Save" button to add the product.
+Updating a Product
+Click on a product in the list to load its details into the form.
+Update the desired fields.
+Click the "Save" button to update the product.
+Deleting a Product
+Click the "Delete" button next to a product in the list.
+
+
+Code Structure:
+
+The main structure of the application is as follows:
+
+css
+Copy code
+src/
+├── app/
+│   ├── components/
+│   │   ├── product-form/
+│   │   │   ├── product-form.component.html
+│   │   │   ├── product-form.component.scss
+│   │   │   └── product-form.component.ts
+│   │   ├── product-list/
+│   │   │   ├── product-list.component.html
+│   │   │   ├── product-list.component.scss
+│   │   │   └── product-list.component.ts
+│   ├── services/
+│   │   ├── product.service.ts
+│   │   └── product-signal.service.ts
+│   ├── app-routing.module.ts
+│   ├── app.component.html
+│   ├── app.component.scss
+│   ├── app.component.ts
+│   ├── app.module.ts
+│   └── assets/
+│       └── product_form.json
+└── index.html
