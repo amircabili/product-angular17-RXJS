@@ -1,4 +1,6 @@
 Products Management Application
+___________________________________
+
 This is an Angular-based application for managing products. It allows users to view a list of products, add new products, update existing products, and delete products. The application uses local storage to persist product data across sessions.
 
 
